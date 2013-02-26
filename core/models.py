@@ -10,6 +10,9 @@ class Servant(models.Model):
     mobile = models.CharField(max_length=255, blank=True)
     email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
+    year = models.IntegerField(null=True, blank=True)
+    sunday_school_class = models.CharField(max_length=255, blank=True)
+    book = models.CharField(max_length=255, blank=True)
     
     def __unicode__(self):
         return self.name
@@ -41,8 +44,15 @@ class Child(models.Model):
     mother_mobile = models.CharField(max_length=255, blank=True)
     mother_email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
+    year = models.IntegerField(null=True, blank=True)
+    sunday_school_class = models.CharField(max_length=255, blank=True)
+    book = models.CharField(max_length=255, blank=True)
+    school_year = models.IntegerField(null=True, blank=True)
     
-
+    def __unicode__(self):
+        return self.name
+    
+    
 class ChildYear(models.Model):
     child = models.ForeignKey(Child)
     year = models.IntegerField()
