@@ -19,6 +19,6 @@ admin.site.register(ServantAttendance, ServantAttendanceAdmin)
 
 
 class ChildAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name',]
 
 admin.site.register(Child, ChildAdmin)
