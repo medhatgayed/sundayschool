@@ -17,13 +17,6 @@ class Servant(models.Model):
     def __unicode__(self):
         return self.name
     
-    
-class ServantYear(models.Model):
-    servant = models.ForeignKey(Servant)
-    year = models.IntegerField()
-    sunday_school_class = models.CharField(max_length=255)
-    book = models.CharField(max_length=255)
-
 
 class ServantAttendance(models.Model):
     servant = models.ForeignKey(Servant)
@@ -48,14 +41,35 @@ class Child(models.Model):
     sunday_school_class = models.CharField(max_length=255, blank=True)
     book = models.CharField(max_length=255, blank=True)
     school_year = models.IntegerField(null=True, blank=True)
+    curriculum_sent = models.BooleanField(default=False)
     
     def __unicode__(self):
         return self.name
     
+    def get_first_name(self):
+        return self.name.split()[0].title()
     
-class ChildYear(models.Model):
-    child = models.ForeignKey(Child)
-    year = models.IntegerField()
-    sunday_school_class = models.CharField(max_length=255)
-    book = models.CharField(max_length=255)
-    school_year = models.IntegerField()
+    def get_parents_names(self):
+        parents_names = ''
+        
+        if self.father_name:
+            parents_names += self.father_name.split()[0].title()
+            
+        if self.mother_name:
+            if parents_names:
+                parents_names += ' and '
+            parents_names += self.mother_name.split()[0].title()
+    
+        return parents_names
+    
+    def get_parents_emails(self):
+        parents_emails = []
+        
+        if self.father_email:
+            parents_emails.append(self.father_email)
+            
+        if self.mother_email and (self.father_email != self.mother_email):
+            parents_emails.append(self.mother_email)
+            
+        return parents_emails
+    
