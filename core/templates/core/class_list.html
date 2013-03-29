@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class {{ sunday_school_class.name }}</title>
+</head>
+
+<body>
+<table>
+    {% for child in children %}
+        {% with parents=child.child_parents %}
+            <tr>
+            <td nowrap>{{ child.name }}</td>
+            <td nowrap>{{ child.dob }}</td>
+            <td nowrap>{{ child.school_year }}</td>
+            <td nowrap>{{ parents.phone }}</td>
+            <td nowrap>{{ parents.father_name }}</td>
+            <td nowrap>{{ parents.father_mobile }}</td>
+            <td nowrap>{{ parents.father_email }}</td>
+            <td nowrap>{{ parents.mother_name }}</td>
+            <td nowrap>{{ parents.mother_mobile }}</td>
+            <td nowrap>{{ parents.mother_email }}</td>
+            <td nowrap>{{ parents.address }}</td>
+            </tr>
+        {% endwith %}
+    {% endfor %}
+</table>
+</body>
+
+</html>
