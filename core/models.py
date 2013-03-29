@@ -7,7 +7,7 @@ class SundaySchoolClass(models.Model):
     name = models.CharField(max_length=255, blank=True)
     book = models.CharField(max_length=255, blank=True)
 
-    def __init__(self):
+    def __unicode__(self):
         return self.name
 
 
@@ -18,8 +18,7 @@ class Servant(models.Model):
     mobile = models.CharField(max_length=255, blank=True)
     email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
-    year = models.IntegerField(null=True, blank=True)
-    book = models.CharField(max_length=255, blank=True)
+    sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
     
     def __unicode__(self):
         return self.name
@@ -74,19 +73,10 @@ class ChildParents(models.Model):
 class Child(models.Model):
     name = models.CharField(max_length=255)
     dob = models.DateField(blank=True, null=True)
-    phone = models.CharField(max_length=255, blank=True)
-    father_name = models.CharField(max_length=255, blank=True)
-    father_mobile = models.CharField(max_length=255, blank=True)
-    father_email = models.EmailField(blank=True)
-    mother_name = models.CharField(max_length=255, blank=True)
-    mother_mobile = models.CharField(max_length=255, blank=True)
-    mother_email = models.EmailField(blank=True)
-    address = models.CharField(max_length=255, blank=True)
-    year = models.IntegerField(null=True, blank=True)
-    book = models.CharField(max_length=255, blank=True)
     school_year = models.IntegerField(null=True, blank=True)
     curriculum_sent = models.BooleanField(default=False)
     child_parents = models.ForeignKey(ChildParents, null=True, blank=True)
+    sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
     
     def __unicode__(self):
         return self.name
@@ -94,27 +84,3 @@ class Child(models.Model):
     def get_first_name(self):
         return self.name.split()[0].title()
     
-    def get_parents_names(self):
-        parents_names = ''
-        
-        if self.father_name:
-            parents_names += self.father_name.split()[0].title()
-            
-        if self.mother_name:
-            if parents_names:
-                parents_names += ' and '
-            parents_names += self.mother_name.split()[0].title()
-    
-        return parents_names
-    
-    def get_parents_emails(self):
-        parents_emails = []
-        
-        if self.father_email:
-            parents_emails.append(self.father_email)
-            
-        if self.mother_email and (self.father_email != self.mother_email):
-            parents_emails.append(self.mother_email)
-            
-        return parents_emails
-

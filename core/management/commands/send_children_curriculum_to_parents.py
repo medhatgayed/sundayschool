@@ -22,7 +22,8 @@ class Command(BaseCommand):
                     raise CommandError('Child "%s" does not exist' % child_id)
         
         for child in children:
-            parents_emails = child.get_parents_emails()
+            parents_emails = child.child_parents.get_parents_emails()
+            parents_names = child.child_parents.get_parents_names()
             if parents_emails and not child.curriculum_sent:
                 subject = 'Sunday School Curriculum for {0}'.format(child.get_first_name())
                 body = """
@@ -33,7 +34,7 @@ Peace and Grace,
 Please find attached the Sunday School Curriculum for {1}.
 
 God bless,
-Sunday School Servants""".format(child.get_parents_names(), child.get_first_name())
+Sunday School Servants""".format(parents_names, child.get_first_name())
                 
                 email = mail.EmailMessage(subject,
                                           body,
@@ -41,8 +42,8 @@ Sunday School Servants""".format(child.get_parents_names(), child.get_first_name
                                           parents_emails,
                                           connection=connection)
                 
-                email.attach_file('/home/medhat/Documents/service/SundaySchoolCurriculum/{0}.pdf'.format(child.book))
-                email.attach_file('/home/medhat/Documents/service/SundaySchoolSchedule/{0}-schedule.pdf'.format(child.book))
+                email.attach_file('/home/medhat/Documents/service/SundaySchoolCurriculum/{0}.pdf'.format(child.sunday_school_class.book))
+                email.attach_file('/home/medhat/Documents/service/SundaySchoolSchedule/{0}-schedule.pdf'.format(child.sunday_school_class.book))
                 email.send()
                 
                 child.curriculum_sent = True
