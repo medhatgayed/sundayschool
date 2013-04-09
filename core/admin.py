@@ -37,6 +37,6 @@ class ChildInline(admin.TabularInline):
 
 class ChildParentsAdmin(admin.ModelAdmin):
     inlines = [ChildInline,]
-    search_fields = ['father_name', 'mother_name',]
+    search_fields = ['father_name', 'mother_name', 'child__name',]
 
 admin.site.register(ChildParents, ChildParentsAdmin)
