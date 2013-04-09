@@ -5,7 +5,7 @@ PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Django settings for sundayschool project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
