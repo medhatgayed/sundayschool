@@ -8,6 +8,8 @@ class Command(BaseCommand):
     help = "Sends a message to each child's parents."
 
     def handle(self, *args, **options):
+        email_id = 'confess20130410'
+        
         connection = mail.get_connection()
         connection.open()
         
@@ -25,7 +27,7 @@ class Command(BaseCommand):
         for child in children:
             parents_emails = child.child_parents.get_parents_emails()
             parents_names = child.child_parents.get_parents_names()
-            if parents_emails and child.sunday_school_class.name != '0':
+            if parents_emails and not email_id in child.sent_emails and child.sunday_school_class.name != '0':
                 subject = 'Practice Sacrament of Confession for {0}'.format(child.get_first_name())
                 body = """
 Dear {0},
@@ -50,6 +52,9 @@ Sunday School Servants""".format(parents_names, child.get_first_name())
                                           to_emails,
                                           connection=connection)
                 email.send()
+                
+                child.sent_emails += email_id + ','
+                child.save()
                 
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
             else:

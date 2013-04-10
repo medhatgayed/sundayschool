@@ -43,7 +43,7 @@ class ChildParents(models.Model):
     address = models.CharField(max_length=255, blank=True)
     
     def __unicode__(self):
-        return self.get_parents_names() or 'Unknown'
+        return self.get_parents_names()
     
     def get_parents_names(self):
         parents_names = ''
@@ -56,7 +56,7 @@ class ChildParents(models.Model):
                 parents_names += ' and '
             parents_names += self.mother_name.split()[0].title()
     
-        return parents_names
+        return parents_names or 'Parents'
     
     def get_parents_emails(self):
         parents_emails = []
@@ -74,9 +74,9 @@ class Child(models.Model):
     name = models.CharField(max_length=255)
     dob = models.DateField(blank=True, null=True)
     school_year = models.IntegerField(null=True, blank=True)
-    curriculum_sent = models.BooleanField(default=False)
     child_parents = models.ForeignKey(ChildParents, null=True, blank=True)
     sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
+    sent_emails = models.TextField(blank=True)
     
     def __unicode__(self):
         return self.name

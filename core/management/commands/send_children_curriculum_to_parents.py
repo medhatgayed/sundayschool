@@ -8,6 +8,8 @@ class Command(BaseCommand):
     help = "Sends the curriculum to each child's parents"
 
     def handle(self, *args, **options):
+        email_id = 'cur20130313'
+        
         connection = mail.get_connection()
         connection.open()
         
@@ -25,7 +27,7 @@ class Command(BaseCommand):
         for child in children:
             parents_emails = child.child_parents.get_parents_emails()
             parents_names = child.child_parents.get_parents_names()
-            if parents_emails and not child.curriculum_sent:
+            if parents_emails and not email_id in child.sent_emails:
                 subject = 'Sunday School Curriculum for {0}'.format(child.get_first_name())
                 body = """
 Dear {0},
@@ -51,8 +53,9 @@ Sunday School Servants""".format(parents_names, child.get_first_name())
                 email.attach_file('/home/medhat/Documents/service/SundaySchoolSchedule/{0}-schedule.pdf'.format(child.sunday_school_class.book))
                 email.send()
                 
-                child.curriculum_sent = True
+                child.sent_emails += email_id + ','
                 child.save()
+                
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
             else:
                 self.stdout.write('No email sent for parents of "%s"\n' % child.name)
