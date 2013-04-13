@@ -9,8 +9,11 @@ class SundaySchoolClass(models.Model):
 
     def __unicode__(self):
         return self.name
-
-
+    
+    def get_servants_emails(self):
+        return [servant.email for servant in self.servant_set.all() if servant.email]
+        
+        
 class Servant(models.Model):
     name = models.CharField(max_length=255)
     dob = models.DateField(blank=True, null=True)
