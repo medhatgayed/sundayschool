@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = "Sends a message to each child's parents."
 
     def handle(self, *args, **options):
-        email_id = 'confess20130410'
+        email_id = 'reschoir20130502'
         
         connection = mail.get_connection()
         connection.open()
@@ -27,20 +27,21 @@ class Command(BaseCommand):
         for child in children:
             parents_emails = child.child_parents.get_parents_emails()
             parents_names = child.child_parents.get_parents_names()
-            if parents_emails and not email_id in child.sent_emails and child.sunday_school_class.name != '0':
-                subject = 'Practice Sacrament of Confession for {0}'.format(child.get_first_name())
+            if parents_emails and not email_id in child.sent_emails:
+                subject = 'Sunday School Resurrection Choir'
                 body = """
 Dear {0},
 
 Peace and Grace,
 
-This is just a reminder that Sunday School is organizing confession sessions
-for all Sunday School children on Sunday 14/4/2013.
+Sunday School will be presenting a choir for the Glorious Feast of Resurrection on Sunday 5th May 2013 at 12pm.
 
-Please bring {1} to participate and get into the habit of practicing this great and holy sacrament.
+Please bring {1} at 11:45am so that the servants will have enough time to organize the kids for the choir.
 
-God bless,
-Sunday School Servants""".format(parents_names, child.get_first_name())
+Happy Glorious Feast of Resurrection.
+
+Sunday School Servants
+St. Mark's Coptic Orthodox Church, Auckland.""".format(parents_names, child.get_first_name())
                 from_email = 'medhat.gayed@gmail.com'
                 to_emails = parents_emails
                 if settings.DEBUG:
