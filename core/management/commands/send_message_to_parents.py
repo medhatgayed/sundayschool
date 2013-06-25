@@ -2,19 +2,23 @@ from django.core.management.base import BaseCommand, CommandError
 from core.models import Child
 from django.core import mail
 from django.conf import settings
+from datetime import datetime
+from core.messages import BIRTHDAY
 
 class Command(BaseCommand):
     args = 'child-id child-id ..." or "all"'
     help = "Sends a message to each child's parents."
 
     def handle(self, *args, **options):
-        email_id = 'reschoir20130502'
+        email_id = 'birthday20130630'
         
         connection = mail.get_connection()
         connection.open()
         
         if args[0] == 'all':
             children = Child.objects.all()
+        elif args[0] == 'birthday':
+            children = Child.objects.filter(dob__month=datetime.now().month)
         else:
             children = []
             for child_id in args:
@@ -28,20 +32,8 @@ class Command(BaseCommand):
             parents_emails = child.child_parents.get_parents_emails()
             parents_names = child.child_parents.get_parents_names()
             if parents_emails and not email_id in child.sent_emails:
-                subject = 'Sunday School Resurrection Choir'
-                body = """
-Dear {0},
-
-Peace and Grace,
-
-Sunday School will be presenting a choir for the Glorious Feast of Resurrection on Sunday 5th May 2013 at 12pm.
-
-Please bring {1} at 11:45am so that the servants will have enough time to organize the kids for the choir.
-
-Happy Glorious Feast of Resurrection.
-
-Sunday School Servants
-St. Mark's Coptic Orthodox Church, Auckland.""".format(parents_names, child.get_first_name())
+                subject = 'Birthday for {0}'.format(child.get_first_name())
+                body = BIRTHDAY.format(parents_names, child.get_first_name())
                 from_email = 'medhat.gayed@gmail.com'
                 to_emails = parents_emails
                 if settings.DEBUG:
@@ -54,8 +46,9 @@ St. Mark's Coptic Orthodox Church, Auckland.""".format(parents_names, child.get_
                                           connection=connection)
                 email.send()
                 
-                child.sent_emails += email_id + ','
-                child.save()
+                if not settings.DEBUG:
+                    child.sent_emails += email_id + ','
+                    child.save()
                 
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
             else:

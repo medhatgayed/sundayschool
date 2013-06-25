@@ -27,6 +27,7 @@ admin.site.register(ServantAttendance, ServantAttendanceAdmin)
 
 class ChildAdmin(admin.ModelAdmin):
     search_fields = ['name',]
+    list_display = ['__unicode__', 'dob',]
 
 admin.site.register(Child, ChildAdmin)
 
