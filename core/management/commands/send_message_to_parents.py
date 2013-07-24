@@ -10,7 +10,7 @@ class Command(BaseCommand):
     help = "Sends a message to each child's parents."
 
     def handle(self, *args, **options):
-        email_id = 'birthday20130630'
+        email_id = 'birthday20130728'
         
         connection = mail.get_connection()
         connection.open()
