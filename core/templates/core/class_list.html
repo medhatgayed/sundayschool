@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Class {{ sunday_school_class.name }}</title>
-<link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -14,28 +14,22 @@
             <th nowrap>DOB</th>
             <th nowrap>Year</th>
             <th nowrap>Phone</th>
-            <th nowrap>Father</th>
-            <th nowrap>Father Mobile</th>
-            <th nowrap>Father Email</th>
-            <th nowrap>Mother</th>
-            <th nowrap>Mother Mobile</th>
-            <th nowrap>Mother Email</th>
+            <th nowrap>F & M Name</th>
+            <th nowrap>F & M Mobile</th>
+            <th nowrap>F & M Email</th>
             <th nowrap>Address</th>
         </tr>
         {% for child in children %}
             {% with parents=child.child_parents %}
                 <tr>
-                <td nowrap>{{ child.name }}</td>
+                <td>{{ child.name }}</td>
                 <td nowrap>{{ child.dob }}</td>
                 <td nowrap>{{ child.school_year }}</td>
                 <td nowrap>{{ parents.phone }}</td>
-                <td nowrap>{{ parents.father_name }}</td>
-                <td nowrap>{{ parents.father_mobile }}</td>
-                <td nowrap>{{ parents.father_email }}</td>
-                <td nowrap>{{ parents.mother_name }}</td>
-                <td nowrap>{{ parents.mother_mobile }}</td>
-                <td nowrap>{{ parents.mother_email }}</td>
-                <td nowrap>{{ parents.address }}</td>
+                <td>F: {{ parents.father_name }}<br />M: {{ parents.mother_name }}</td>
+                <td nowrap>F: {{ parents.father_mobile }}<br />M: {{ parents.mother_mobile }}</td>
+                <td nowrap>F: {{ parents.father_email }}<br />M: {{ parents.mother_email }}</td>
+                <td>{{ parents.address }}</td>
                 </tr>
             {% endwith %}
         {% endfor %}
