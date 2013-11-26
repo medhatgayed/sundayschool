@@ -50,3 +50,22 @@ God bless,
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
+
+CAMP_FORMS_DUE_DATE = """
+Dear {0},
+
+Grace and Peace,
+
+This is just a reminder that the Primary Sunday School Camp forms and payment are due this Sunday 1st December 2013 so
+please remember to send them with your child this Sunday.
+
+We appreciate your assistance with this matter and helping us get ready on time.
+
+IMPORTANT:
+If you are able to give us a hand in supervising the kids during the camp activities please reply to this email with the dates and times you can help on.
+The camp starts on 2nd January 2014 at 11:30am and finishes on 4th January 2014 at 1pm.
+
+God bless,
+Sunday School Servants
+St. Mark's Coptic Orthodox Church, Auckland.
+"""
