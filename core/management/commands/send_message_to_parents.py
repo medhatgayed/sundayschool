@@ -15,6 +15,7 @@ class Command(BaseCommand):
         one_per_parents = settings.MESSAGE_ONE_PER_PARENTS
         is_sample = settings.MESSAGE_IS_SAMPLE
         sample_count = settings.MESSAGE_SAMPLE_COUNT
+        is_birthday = False
         
         connection = mail.get_connection()
         connection.open()
@@ -22,6 +23,7 @@ class Command(BaseCommand):
         if args[0] == 'all':
             children = Child.objects.all()
         elif args[0] == 'birthday':
+            is_birthday = True
             children = Child.objects.filter(dob__month=datetime.now().month)
         else:
             children = []
@@ -47,7 +49,10 @@ class Command(BaseCommand):
             elif parents_emails and not email_id in child.sent_emails:
                 parents_ids.append(parents_id)
                 subject = settings.MESSAGE_SUBJECT
-                body = message.format(parents_names)
+                if is_birthday:
+                    body = message.format(parents_names, child.get_first_name())
+                else:
+                    body = message.format(parents_names)
                 from_email = settings.MESSAGE_FROM_EMAIL
                 to_emails = settings.MESSAGE_TO_EMAILS
                 
