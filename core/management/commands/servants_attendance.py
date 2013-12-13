@@ -9,10 +9,9 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         servants = Servant.objects.all()
-        for date_str, names in settings.SERVANTS_ATTENDANCE:
-            #date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-            for servant in servants:
-                if servant.name in names:
+        for servant in servants:
+            for date_str, uids in settings.SERVANTS_ATTENDANCE:
+                if servant.uid in uids:
                     attended_mass = True
                     attended_meeting = True
                     attended_sunday_school = True

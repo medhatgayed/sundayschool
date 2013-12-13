@@ -16,6 +16,7 @@ class SundaySchoolClass(models.Model):
         
 class Servant(models.Model):
     name = models.CharField(max_length=255)
+    uid = models.CharField(max_length=255)
     dob = models.DateField(blank=True, null=True)
     phone = models.CharField(max_length=255, blank=True)
     mobile = models.CharField(max_length=255, blank=True)
