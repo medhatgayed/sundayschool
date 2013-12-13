@@ -10,7 +10,10 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         servants = Servant.objects.all()
         for servant in servants:
-            for date_str, uids in settings.SERVANTS_ATTENDANCE:
+            self.stdout.write('Importing attendance for {0}\n'.format(servant.name))
+
+            for date_str in sorted(settings.SERVANTS_ATTENDANCE):
+                uids = settings.SERVANTS_ATTENDANCE[date_str]
                 if servant.uid in uids:
                     attended_mass = True
                     attended_meeting = True
@@ -26,5 +29,4 @@ class Command(BaseCommand):
                                                  attended_meeting=attended_meeting,
                                                  attended_sunday_school=attended_sunday_school)
 
-
-
+        self.stdout.write('Successfully imported servants attendance.\n')
