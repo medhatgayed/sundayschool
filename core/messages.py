@@ -69,3 +69,19 @@ God bless,
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
+
+SUMMER_COMPETITION_MEMORIZATION = """
+Dear {0},
+
+Grace and Peace,
+
+This is a reminder that Sunday School will test the summer memorization on Sunday 26th January.
+
+Please make sure {1} is ready for the memorization test.
+
+The parts that {1} needs to memorize are in the attached file.
+
+God bless,
+Sunday School Servants
+St. Mark's Coptic Orthodox Church, Auckland.
+"""

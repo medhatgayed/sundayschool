@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 if is_birthday:
                     body = message.format(parents_names, child.get_first_name())
                 else:
-                    body = message.format(parents_names)
+                    body = message.format(parents_names, child.get_first_name())
                 from_email = settings.MESSAGE_FROM_EMAIL
                 to_emails = settings.MESSAGE_TO_EMAILS
                 
@@ -66,6 +66,7 @@ class Command(BaseCommand):
                                           connection=connection)
 
                 if settings.MESSAGE_SEND_EMAIL:
+                    email.attach_file('/home/medhat/Dropbox/service/2013/memo-{0}.pdf'.format(child.school_year))
                     email.send()
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
                 
