@@ -66,7 +66,6 @@ class Command(BaseCommand):
                                           connection=connection)
 
                 if settings.MESSAGE_SEND_EMAIL:
-                    email.attach_file('/home/medhat/Dropbox/service/2013/memo-{0}.pdf'.format(child.school_year))
                     email.send()
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
                 
