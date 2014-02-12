@@ -13,15 +13,21 @@ class Command(BaseCommand):
             self.stdout.write('Importing attendance for {0}\n'.format(servant.name))
 
             for date_str in sorted(settings.SERVANTS_ATTENDANCE):
-                uids = settings.SERVANTS_ATTENDANCE[date_str]
+                attended_mass = False
+                attended_meeting = False
+                attended_sunday_school = False
+
+                uids = settings.SERVANTS_ATTENDANCE[date_str]['mass']
                 if servant.uid in uids:
                     attended_mass = True
+
+                uids = settings.SERVANTS_ATTENDANCE[date_str]['meeting']
+                if servant.uid in uids:
                     attended_meeting = True
+
+                uids = settings.SERVANTS_ATTENDANCE[date_str]['ss']
+                if servant.uid in uids:
                     attended_sunday_school = True
-                else:
-                    attended_mass = False
-                    attended_meeting = False
-                    attended_sunday_school = False
 
                 ServantAttendance.objects.create(servant=servant,
                                                  date=date_str,
