@@ -1,4 +1,4 @@
-Django==1.6.2
+Django==1.6.5
 South==0.8.4
-psycopg2==2.4.6
-fabric==1.8.2
+psycopg2==2.5.3
+fabric==1.8.3
