@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and Peace,
 
-Sunday School will celebrate children whose birthday is in November this coming Sunday 16th November.
+Sunday School will celebrate children whose birthday is in January this coming Sunday 25th January.
 
 We would love to have {1} with us! So please make sure you bring {1} to church this coming Sunday.
 
@@ -71,15 +71,15 @@ St. Mark's Coptic Orthodox Church, Auckland.
 """
 
 SUMMER_COMPETITION_MEMORIZATION = """
-Dear {0},
+Dear parents,
 
 Grace and Peace,
 
-This is a reminder that Sunday School will test the summer memorization on Sunday 26th January.
+This is a reminder that Sunday School will test the summer memorization on Sunday 1st February.
 
-Please make sure {1} is ready for the memorization test.
+Sunday School servants have informed your children about the parts that need to be memorized.
 
-The parts that {1} needs to memorize are in the attached file.
+Please make sure they are ready for the memorization test.
 
 God bless,
 Sunday School Servants
