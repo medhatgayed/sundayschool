@@ -9,3 +9,6 @@ def class_list(request, name):
                                                     'children': children})
     
 
+def altar_list(request):
+    sunday_school_classes = SundaySchoolClass.objects.all()
+    return render(request, 'core/altar_list.html', {'sunday_school_classes': sunday_school_classes})

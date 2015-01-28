@@ -26,7 +26,9 @@ class Servant(models.Model):
     
     def __unicode__(self):
         return self.name
-    
+
+    def get_first_name(self):
+        return self.name.split()[0].title()
 
 class ServantAttendance(models.Model):
     servant = models.ForeignKey(Servant)
