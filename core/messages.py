@@ -85,3 +85,21 @@ God bless,
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
+
+PARENTS_MEETING = """
+Dear {0},
+
+Grace and peace,
+
+Sunday School will be holding a parents meeting on Sunday 8th March 2015 after Sunday School at 1:30pm.
+
+This is an opportunity for you to ask questions and raise any issues or concerns and discuss them with the servants.
+
+It is also a good chance for Sunday School servants to talk with you and give you useful feedback about your children.
+
+Please come and invite other parents.
+
+God bless,
+Sunday School Servants
+St. Mark's Coptic Orthodox Church, Auckland.
+"""
