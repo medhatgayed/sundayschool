@@ -33,18 +33,18 @@ St. Mark's Coptic Orthodox Church, Auckland.
 TRIP_PLAN_CHANGE = """
 Dear {0},
 
-Peace and Grace,
+Grace and peace,
 
-Due to the rainy weather tomorrow Sunday School will go to Chipmunks albany instead of the zoo.
+Just to let you know that due to another occasion taking place in the church, 
+we needed to move the date of the trip to Extreme Edge Rock Climbing to Sunday 30th August. 
 
-We will meet at church at 10am then will go to Chipmunks however if you prefer to take your kids
-directly to Chipmunks at 11am feel free to do so.
+So the Sunday School trip is going to be on Sunday 30th August and the bus will leave the church 
+at 11:30am and will come back to church at 5pm.
 
-Chipmunks address is 15 Arrenway Drive, Albany.
+The bus seats are filling up quickly so if you would like your child to find a place please
+book asap.
 
-Please note Chipmunks won't allow us to bring our own food so the children will need to eat before they go or buy food from the cafe.
-
-We will finish at Chipmunks at 4pm then will go back to church for a shared dinner, we will finish dinner around 6pm.
+For more information about the trip and prices contact the Sunday School servants.
 
 God bless,
 Sunday School Servants
