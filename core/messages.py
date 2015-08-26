@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and Peace,
 
-Sunday School will celebrate children whose birthday is in July this coming Sunday 19th July.
+Sunday School will celebrate children whose birthday is in August this coming Sunday 23rd August.
 
 We would love to have {1} with us! So please make sure you bring {1} to church this coming Sunday.
 
