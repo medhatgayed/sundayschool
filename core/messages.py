@@ -14,7 +14,7 @@ St. Mark's Coptic Orthodox Church, Auckland.
 """
 
 
-RESURRECTION_CHOIR = """
+CHOIR = """
 Dear {0},
 
 Peace and Grace,
@@ -30,28 +30,31 @@ St. Mark's Coptic Orthodox Church, Auckland.
 """
 
 
-TRIP_PLAN_CHANGE = """
+TRIP = """
 Dear {0},
 
 Grace and peace,
 
-Just to let you know that due to another occasion taking place in the church, 
-we needed to move the date of the trip to Extreme Edge Rock Climbing to Sunday 30th August. 
+Just a reminder of the Sunday School trip to Extreme Edge Rock Climbing this coming Sunday 30th August.
 
-So the Sunday School trip is going to be on Sunday 30th August and the bus will leave the church 
-at 11:30am and will come back to church at 5pm.
+The bus will leave church at 11:30am and will return to church at 5pm.
 
-The bus seats are filling up quickly so if you would like your child to find a place please
-book asap.
+The address is 40c Morrin Road, Panmure.
 
-For more information about the trip and prices contact the Sunday School servants.
+Please remember that your child will need their lunch box and drinking bottle.
+
+Also a reminder that you need to fill out the Participant Agreement form at this link:
+
+https://app.rockgympro.com/waiver/esign/extremeedgenz/93376cde-7248-497e-83a0-c56dd650ce8c
+
+Filling the above form is necessary to allow your child to participate in the activities.
 
 God bless,
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
 
-CAMP_FORMS_DUE_DATE = """
+CAMP = """
 Dear {0},
 
 Grace and Peace,
@@ -70,7 +73,7 @@ Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
 
-SUMMER_COMPETITION_MEMORIZATION = """
+SUMMER_COMPETITION = """
 Dear parents,
 
 Grace and Peace,
