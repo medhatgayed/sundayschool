@@ -106,3 +106,19 @@ God bless,
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
 """
+
+ANNOUNCEMENT = """
+Dear parents,
+
+Grace and Peace,
+
+Please note that on Sunday 18th October we will play an educational cartoon movie explaining 
+and teaching the children about the Holy Liturgy. 
+
+We encourage you to bring your children to benefit from this session and
+learn about the rites of the Holy Liturgy.
+
+God bless,
+Sunday School Servants
+St. Mark's Coptic Orthodox Church, Auckland.
+"""
