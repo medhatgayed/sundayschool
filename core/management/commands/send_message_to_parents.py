@@ -67,6 +67,7 @@ class Command(BaseCommand):
 
                 if settings.MESSAGE_SEND_EMAIL:
                     email.send()
+                    count += 1
                 self.stdout.write('Successfully sent email to parents of "%s"\n' % child.name)
                 
                 if not is_sample:
@@ -75,7 +76,6 @@ class Command(BaseCommand):
             else:
                 self.stdout.write('No email sent for parents of "%s"\n' % child.name)
 
-            count += 1
             if is_sample and count >= sample_count:
                 break
                 

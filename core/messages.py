@@ -3,9 +3,9 @@ Dear {0},
 
 Grace and Peace,
 
-Sunday School will celebrate children whose birthday is in September this coming Sunday 20th September.
+This coming Sunday 11th October we will celebrate birthdays for children born in October.
 
-We would love to have {1} with us! So please make sure you bring {1} to church this coming Sunday.
+We would love to have {1} with us!
 
 Happy Birthday to {1}!
 
