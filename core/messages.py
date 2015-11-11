@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and Peace,
 
-This coming Sunday 11th October we will celebrate birthdays for children born in October.
+This coming Sunday 15th November, Sunday School will celebrate birthdays for children born in November.
 
 We would love to have {1} with us!
 
@@ -112,11 +112,13 @@ Dear parents,
 
 Grace and Peace,
 
-Please note that on Sunday 18th October we will play an educational cartoon movie explaining 
-and teaching the children about the Holy Liturgy. 
+Please note that this coming Sunday 18th October we will play an educational cartoon movie explaining
+and teaching the children about the Holy Liturgy.
 
 We encourage you to bring your children to benefit from this session and
 learn about the rites of the Holy Liturgy.
+
+Please tell other parents to bring their children too.
 
 God bless,
 Sunday School Servants
