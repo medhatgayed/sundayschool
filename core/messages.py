@@ -112,13 +112,12 @@ Dear parents,
 
 Grace and Peace,
 
-Please note that this coming Sunday 18th October we will play an educational cartoon movie explaining
-and teaching the children about the Holy Liturgy.
+There is a couple of things we would like to tell you about:
 
-We encourage you to bring your children to benefit from this session and
-learn about the rites of the Holy Liturgy.
+1. Sunday School start time has changed to 11:45am this means that from now on Sunday School will start half an hour earlier.
+2. There will be a trip to Xtreme entertainment on the 29th November. If your child did not obtain a form please ask one of the servants.
 
-Please tell other parents to bring their children too.
+Please pass the word to other parents.
 
 God bless,
 Sunday School Servants
