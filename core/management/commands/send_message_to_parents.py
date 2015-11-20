@@ -21,10 +21,10 @@ class Command(BaseCommand):
         connection.open()
         
         if args[0] == 'all':
-            children = Child.objects.all()
+            children = Child.objects.filter(is_active=True)
         elif args[0] == 'birthday':
             is_birthday = True
-            children = Child.objects.filter(dob__month=datetime.now().month)
+            children = Child.objects.filter(dob__month=datetime.now().month, is_active=True)
         else:
             children = []
             for child_id in args:
