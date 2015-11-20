@@ -39,7 +39,7 @@ class ChildInline(admin.TabularInline):
 
 
 class ChildParentsAdmin(admin.ModelAdmin):
-    list_display = ['father_name', 'father_mobile', 'father_email',
+    list_display = ['__unicode__', 'father_name', 'father_mobile', 'father_email',
                     'mother_name', 'mother_mobile', 'mother_email', 'phone', 'is_active']
     inlines = [ChildInline,]
     search_fields = ['father_name', 'mother_name', 'child__name',]
