@@ -23,6 +23,7 @@ class Servant(models.Model):
     email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
     sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
+    is_active = models.BooleanField(default=True)
     
     def __unicode__(self):
         return self.name
@@ -47,6 +48,7 @@ class ChildParents(models.Model):
     mother_mobile = models.CharField(max_length=255, blank=True)
     mother_email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
+    is_active = models.BooleanField(default=True)
     
     def __unicode__(self):
         return self.get_parents_names()
@@ -83,6 +85,7 @@ class Child(models.Model):
     child_parents = models.ForeignKey(ChildParents, null=True, blank=True)
     sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
     sent_emails = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
     
     def __unicode__(self):
         return self.name
