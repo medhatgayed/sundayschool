@@ -12,6 +12,12 @@ class SundaySchoolClass(models.Model):
     
     def get_servants_emails(self):
         return [servant.email for servant in self.servant_set.all() if servant.email]
+
+    def get_active_servants(self):
+        return self.servant_set.filter(is_active=True)
+
+    def get_active_children(self):
+        return self.child_set.filter(is_active=True)
         
         
 class Servant(models.Model):

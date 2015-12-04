@@ -19,7 +19,7 @@
             <th nowrap>F & M Email</th>
             <th nowrap>Address</th>
         </tr>
-        {% for child in children %}
+        {% for child in sunday_school_class.get_active_children %}
             {% with parents=child.child_parents %}
                 <tr>
                 <td>{{ child.name }}</td>

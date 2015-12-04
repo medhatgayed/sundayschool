@@ -8,14 +8,14 @@
 <body>
     <h6 class="text-center">+</h6>
     <h5 class="text-center">Sunday School servants and children for {% now "Y" %}</h5>
-    <div><span><strong>Servants:</strong></span> {% for sunday_school_class in sunday_school_classes %}{% for servant in sunday_school_class.servant_set.all %}{{ servant.get_first_name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}</div>
+    <div><span><strong>Servants:</strong></span> {% for sunday_school_class in sunday_school_classes %}{% for servant in sunday_school_class.get_active_servants %}{{ servant.get_first_name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% if not forloop.last %}, {% endif %}{% endfor %}</div>
     {% for sunday_school_class in sunday_school_classes %}
     <div style="float: left;">
     <table class="table">
         <tr>
             <th nowrap>{{ sunday_school_class }}</th>
         </tr>
-        {% for child in sunday_school_class.child_set.all %}
+        {% for child in sunday_school_class.get_active_children %}
             <tr>
                 <td>{{ child.get_first_name }}</td>
             </tr>
