@@ -1,9 +1,9 @@
 BIRTHDAY = """
 Dear {0},
 
-Grace and Peace,
+Grace and peace from our Lord, God and Saviour Jesus Christ,
 
-This coming Sunday 15th November, Sunday School will celebrate birthdays for children born in November.
+This coming Sunday 20th December, Sunday School will celebrate birthdays for children born in December.
 
 We would love to have {1} with us!
 
@@ -112,10 +112,11 @@ Dear parents,
 
 Grace and Peace,
 
-There is a couple of things we would like to tell you about:
+Just to let you know that we handed out the primary camp registration forms. If your child has not received a form please ask Sunday School servants.
 
-1. Sunday School start time has changed to 11:45am this means that from now on Sunday School will start half an hour earlier.
-2. There will be a trip to Xtreme entertainment on the 29th November. If your child did not obtain a form please ask one of the servants.
+The camp will be from Monday 11th to Wednesday 13th January 2016 at Motu Moana Scout Camp, 90 Connaught Street, Blockhouse Bay.
+
+The last day for registering for the primary camp is Sunday 27th December 2015.
 
 Please pass the word to other parents.
 

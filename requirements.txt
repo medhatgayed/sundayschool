@@ -1,3 +1,4 @@
-Django==1.8.6
+Django==1.9
 psycopg2==2.5.3
 fabric==1.8.3
+ipdb==0.8.1
