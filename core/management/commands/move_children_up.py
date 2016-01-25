@@ -21,8 +21,8 @@ class Command(BaseCommand):
         for child in Child.objects.filter(school_year__gte=2):
             child.school_year += 1
             if child.school_year > 6:
-                child.delete()
-                self.stdout.write('Deleted %s because moved up to year %s.\n' % (child, child.school_year))
+                child.is_active = False
+                self.stdout.write('De-activated %s because moved up to year %s.\n' % (child, child.school_year))
                 continue
             child.sunday_school_class = map[child.school_year]
             child.save()

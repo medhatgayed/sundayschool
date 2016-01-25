@@ -29,7 +29,7 @@ admin.site.register(ServantAttendance, ServantAttendanceAdmin)
 class ChildAdmin(admin.ModelAdmin):
     search_fields = ['name',]
     list_display = ['name', 'dob', 'school_year', 'sunday_school_class', 'is_active']
-    list_filter = ['school_year', 'sunday_school_class']
+    list_filter = ['school_year', 'sunday_school_class', 'is_active']
 
 admin.site.register(Child, ChildAdmin)
 
@@ -41,7 +41,8 @@ class ChildInline(admin.TabularInline):
 class ChildParentsAdmin(admin.ModelAdmin):
     list_display = ['__unicode__', 'father_name', 'father_mobile', 'father_email',
                     'mother_name', 'mother_mobile', 'mother_email', 'phone', 'is_active']
-    inlines = [ChildInline,]
-    search_fields = ['father_name', 'mother_name', 'child__name',]
+    inlines = [ChildInline]
+    search_fields = ['father_name', 'mother_name', 'child__name']
+    list_filter = ['is_active']
 
 admin.site.register(ChildParents, ChildParentsAdmin)
