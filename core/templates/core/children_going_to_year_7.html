@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Children going to Year 7</title>
+<link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h3 class="text-center">+</h3>
+    <h4 class="text-center">Children going to Year 7 in {% now "Y" %}</h3>
+    <table class="table">
+        <tr>
+            <th nowrap>Name</th>
+            <th nowrap>DOB</th>
+            <th nowrap>Year</th>
+            <th nowrap>Phone</th>
+            <th nowrap>F & M Name</th>
+            <th nowrap>F & M Mobile</th>
+            <th nowrap>F & M Email</th>
+            <th nowrap>Address</th>
+        </tr>
+        {% for child in children %}
+            {% with parents=child.child_parents %}
+                <tr>
+                <td>{{ child.name }}</td>
+                <td nowrap>{{ child.dob }}</td>
+                <td nowrap>{{ child.school_year }}</td>
+                <td nowrap>{{ parents.phone }}</td>
+                <td>F: {{ parents.father_name }}<br />M: {{ parents.mother_name }}</td>
+                <td nowrap>F: {{ parents.father_mobile }}<br />M: {{ parents.mother_mobile }}</td>
+                <td nowrap>F: {{ parents.father_email }}<br />M: {{ parents.mother_email }}</td>
+                <td>{{ parents.address }}</td>
+                </tr>
+            {% endwith %}
+        {% endfor %}
+    </table>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}core/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
