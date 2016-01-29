@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Class {{ sunday_school_class.name }}</title>
+<title>Class {{ sunday_school_class.name }} for {% now "Y" %}</title>
 <link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <h3 class="text-center">+</h3>
-    <h4 class="text-center">Sunday School Class {{ sunday_school_class.name }}</h3>
+    <h4 class="text-center">Sunday School Class {{ sunday_school_class.name }} for {% now "Y" %}</h3>
     <table class="table">
         <tr>
             <th nowrap>Name</th>

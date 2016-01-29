@@ -1,8 +1,9 @@
 from django.conf.urls import patterns, include, url
-from core.views import class_list, altar_list, children_going_to_year_7
+from core.views import class_list, altar_list, children_in_school_year
+
 
 urlpatterns = [
     url(r'^class/(?P<name>\d+&?\d?)/', class_list),
     url(r'^altar-list/', altar_list),
-    url(r'^children-going-to-year-7/', children_going_to_year_7),
+    url(r'^children-in-school-year/(?P<school_year>\d{1,2})/', children_in_school_year),
 ]

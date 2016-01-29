@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Children going to Year 7</title>
+<title>Children in Year {{ school_year }}</title>
 <link href="{{ STATIC_URL }}core/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <h3 class="text-center">+</h3>
-    <h4 class="text-center">Children going to Year 7 in {% now "Y" %}</h3>
+    <h4 class="text-center">Children in Year {{ school_year }}</h3>
     <table class="table">
         <tr>
             <th nowrap>Name</th>

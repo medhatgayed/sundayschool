@@ -13,6 +13,7 @@ def altar_list(request):
     return render(request, 'core/altar_list.html', {'sunday_school_classes': sunday_school_classes})
 
 
-def children_going_to_year_7(request):
-    children = Child.objects.filter(school_year=6, is_active=True)
-    return render(request, 'core/children_going_to_year_7.html', {'children': children})
+def children_in_school_year(request, school_year):
+    children = Child.objects.filter(school_year=school_year, is_active=True)
+    return render(request, 'core/children_in_school_year.html', {'children': children, 
+    	                                                         'school_year': school_year})
