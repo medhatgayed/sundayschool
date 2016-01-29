@@ -15,6 +15,7 @@ class ServantAttendanceInline(admin.TabularInline):
 
 class ServantAdmin(admin.ModelAdmin):
     list_display = ['name', 'sunday_school_class', 'uid', 'is_active']
+    list_filter = ['sunday_school_class', 'is_active']
     inlines = [ServantAttendanceInline,]
 
 admin.site.register(Servant, ServantAdmin)
