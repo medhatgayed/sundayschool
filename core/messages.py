@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and peace from our Lord, God and Saviour Jesus Christ,
 
-This coming Sunday 24th January, Sunday School will celebrate birthdays for children born in January.
+This coming Sunday 28th February, Sunday School will celebrate birthdays for children born in February.
 
 We would love to have {1} with us!
 
@@ -78,7 +78,7 @@ Dear parents,
 
 Grace and Peace,
 
-This is a reminder that Sunday School will test the summer memorization on Sunday 1st February.
+This is a reminder that Sunday School will test the summer memorization on Sunday 21st February.
 
 Sunday School servants have informed your children about the parts that need to be memorized.
 
