@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and peace from our Lord, God and Saviour Jesus Christ,
 
-This coming Sunday 28th February, Sunday School will celebrate birthdays for children born in February.
+This coming Sunday 6th March, Sunday School will celebrate birthdays for children born in March.
 
 We would love to have {1} with us!
 
