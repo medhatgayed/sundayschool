@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+from datetime import datetime
 PROJECT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Django settings for sundayschool project.
@@ -160,6 +161,61 @@ LOGGING = {
         },
     }
 }
+
+# Summer festival certificates
+CERT_TEMPLATE_PATH = '/home/medhat/Dropbox/service/summer_festival_certificate_templates/'
+CERT_PATH = '/home/medhat/Dropbox/service/{}/summer_festival_certificates/'.format(datetime.now().strftime('%Y'))
+
+CERT_EX_FILE = 'EX.pdf'
+CERT_HA_FILE = 'HA.pdf'
+CERT_AP_FILE = 'AP.pdf'
+CERT_PA_FILE = 'PA.pdf'
+
+CERT_FILE = {'EX': CERT_EX_FILE, 'HA': CERT_HA_FILE, 'AP': CERT_AP_FILE, 'PA': CERT_PA_FILE}
+
+CERT_EX_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+
+CERT_HA_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+
+CERT_AP_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+
+CERT_PA_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+
+CERT_COORD = {'EX': CERT_EX_COORD, 'HA': CERT_HA_COORD, 'AP': CERT_AP_COORD, 'PA': CERT_PA_COORD}
+
+CERT_EX_CHILDREN = {'year_0': [],
+                    'year_1_2': [],
+                    'year_3_4': [],
+                    'year_5_6': []}
+
+CERT_HA_CHILDREN = {'year_0': [],
+                    'year_1_2': [],
+                    'year_3_4': [],
+                    'year_5_6': []}
+
+CERT_AP_CHILDREN = {'year_0': [],
+                    'year_1_2': [],
+                    'year_3_4': [],
+                    'year_5_6': []}
+
+CERT_PA_CHILDREN = {'year_0': [],
+                    'year_1_2': [],
+                    'year_3_4': [],
+                    'year_5_6': []}
+
+CERT_CHILDREN = {'EX': CERT_EX_CHILDREN, 'HA': CERT_HA_CHILDREN, 'AP': CERT_AP_CHILDREN, 'PA': CERT_PA_CHILDREN}
 
 # Load local_settings.py
 try:
