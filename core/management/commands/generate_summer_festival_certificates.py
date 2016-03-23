@@ -13,9 +13,11 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         for cert_type, ss_class_children in settings.CERT_CHILDREN.iteritems():
-            self.std
+            self.stdout.write('Certificate Type: {}\n'.format(cert_type))
             for ss_class, children in ss_class_children.iteritems():
+                self.stdout.write('SS Class: {}\n'.format(ss_class))
                 for child in children:
+                    self.stdout.write('Child: {}\n'.format(child))
                     paf_path = os.path.join(settings.CERT_TEMPLATE_PATH, settings.CERT_FILE[cert_type])
                     pdf = PdfFileReader(paf_path)
                     page = pdf.getPage(0)
@@ -30,7 +32,6 @@ class Command(BaseCommand):
                     y = settings.CERT_COORD[cert_type]['child']['y']
                     c.setFont(font_name, font_size)
                     c.drawCentredString(x, y, child)
-                    c.save()
 
                     # Event
                     font_name = settings.CERT_COORD[cert_type]['event']['font']['name']
@@ -39,7 +40,6 @@ class Command(BaseCommand):
                     y = settings.CERT_COORD[cert_type]['event']['y']
                     c.setFont(font_name, font_size)
                     c.drawCentredString(x, y, 'Sunday School Summer Festival {}'.format(datetime.now().strftime('%Y')))
-                    c.save()
 
                     # Date
                     font_name = settings.CERT_COORD[cert_type]['date']['font']['name']
@@ -48,7 +48,6 @@ class Command(BaseCommand):
                     y = settings.CERT_COORD[cert_type]['date']['y']
                     c.setFont(font_name, font_size)
                     c.drawCentredString(x, y, '{}'.format(datetime.now().strftime('%Y')))
-                    c.save()
 
                     # Church
                     font_name = settings.CERT_COORD[cert_type]['church']['font']['name']
@@ -66,9 +65,9 @@ class Command(BaseCommand):
                     writer.addPage(page)
                     
                     output_file = '{}_{}.pdf'.format(child, datetime.now().strftime('%Y'))
-                    output_dir = os.path(settings.CERT_PATH, ss_class)
+                    output_dir = os.path.join(settings.CERT_PATH, ss_class)
                     if not os.path.exists(output_dir):
                         os.makedirs(output_dir)
-                    output_path = os.path(output_dir, output_file)
+                    output_path = os.path.join(output_dir, output_file)
                     with open(output_path, 'wb') as f:
                         writer.write(f)
