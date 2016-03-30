@@ -173,25 +173,25 @@ CERT_PA_FILE = 'PA.pdf'
 
 CERT_FILE = {'EX': CERT_EX_FILE, 'HA': CERT_HA_FILE, 'AP': CERT_AP_FILE, 'PA': CERT_PA_FILE}
 
-CERT_EX_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
-                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+CERT_EX_COORD = {'child': {'x': 470, 'y': 280, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 530, 'y': 200, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'date': {'x': 360, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}},
+                 'church': {'x': 600, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}}}
 
-CERT_HA_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
-                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+CERT_HA_COORD = {'child': {'x': 390, 'y': 280, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 410, 'y': 190, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'date': {'x': 200, 'y': 120, 'font': {'name': 'Helvetica', 'size': 18}},
+                 'church': {'x': 600, 'y': 120, 'font': {'name': 'Helvetica', 'size': 18}}}
 
-CERT_AP_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
-                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+CERT_AP_COORD = {'child': {'x': 420, 'y': 340, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 410, 'y': 250, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'date': {'x': 170, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}},
+                 'church': {'x': 650, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}}}
 
-CERT_PA_COORD = {'child': {'x': 100, 'y': 300, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'event': {'x': 100, 'y': 200, 'font': {'name': 'Helvetica', 'size': 26}},
-                 'date': {'x': 50, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}},
-                 'church': {'x': 200, 'y': 100, 'font': {'name': 'Helvetica', 'size': 20}}}
+CERT_PA_COORD = {'child': {'x': 395, 'y': 350, 'font': {'name': 'Helvetica', 'size': 26}},
+                 'event': {'x': 375, 'y': 250, 'font': {'name': 'Helvetica', 'size': 20}},
+                 'date': {'x': 160, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}},
+                 'church': {'x': 600, 'y': 100, 'font': {'name': 'Helvetica', 'size': 18}}}
 
 CERT_COORD = {'EX': CERT_EX_COORD, 'HA': CERT_HA_COORD, 'AP': CERT_AP_COORD, 'PA': CERT_PA_COORD}
 

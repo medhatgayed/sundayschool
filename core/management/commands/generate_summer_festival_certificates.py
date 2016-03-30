@@ -47,7 +47,7 @@ class Command(BaseCommand):
                     x = settings.CERT_COORD[cert_type]['date']['x']
                     y = settings.CERT_COORD[cert_type]['date']['y']
                     c.setFont(font_name, font_size)
-                    c.drawCentredString(x, y, '{}'.format(datetime.now().strftime('%Y')))
+                    c.drawCentredString(x, y, '{}'.format(datetime.now().strftime('%B %Y')))
 
                     # Church
                     font_name = settings.CERT_COORD[cert_type]['church']['font']['name']
@@ -63,7 +63,7 @@ class Command(BaseCommand):
 
                     writer = PdfFileWriter()
                     writer.addPage(page)
-                    
+
                     output_file = '{}_{}.pdf'.format(child, datetime.now().strftime('%Y'))
                     output_dir = os.path.join(settings.CERT_PATH, ss_class)
                     if not os.path.exists(output_dir):
