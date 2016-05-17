@@ -1,13 +1,15 @@
 BIRTHDAY = """
 Dear {0},
 
-Grace and peace from our Lord, God and Saviour Jesus Christ,
+Christ is Risen,
 
-This coming Sunday 6th March, Sunday School will celebrate birthdays for children born in March.
+This coming Sunday 22nd May, Sunday School will celebrate birthdays for children born in April and May.
 
 We would love to have {1} with us!
 
 Happy Birthday to {1}!
+
+PS. We apologize for not being able to celebrate birthdays for April earlier due to various church occasions.
 
 Sunday School Servants
 St. Mark's Coptic Orthodox Church, Auckland.
