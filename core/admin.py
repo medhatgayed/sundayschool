@@ -23,7 +23,7 @@ admin.site.register(Servant, ServantAdmin)
 
 class ServantAttendanceAdmin(admin.ModelAdmin):
     list_display = ['servant', 'date', 'attended_mass', 'attended_meeting', 'attended_sunday_school']
-    list_filter = ['servant']
+    list_filter = ['servant', 'servant__is_active']
 
 admin.site.register(ServantAttendance, ServantAttendanceAdmin)
 
