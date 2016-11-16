@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and peace,
 
-This coming Sunday 30th October, Sunday School will celebrate birthdays for children born in October.
+This coming Sunday 20th November, Sunday School will celebrate birthdays for children born in November.
 
 We would love to have {1} with us!
 
