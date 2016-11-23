@@ -59,26 +59,14 @@ Dear {0},
 
 Grace and Peace,
 
-Primary Sunday School would like to announce that primary camp this year will be
-taking place on Friday 16th, Saturday 17th and departing on Sunday 18th December.
+Just a reminder that we need to know the number of children going to
+Primary Sunday School camp this year to help us organise camp activities.
 
-The camp location is:
-Motu Moana Scout Camp
-90 Connaught Street, Blockhouse Bay, Auckland
+The camp will be taking place on Friday 16th, Saturday 17th and departing on Sunday 18th December.
 
-Parents can drop off their children to the camp any time on Friday starting from 10am and must pickup
-their children by 7:30am on Sunday to be able to attend the Holy Liturgy at church.
+Please REPLY TO THIS EMAIL to confirm if {1} is going to the camp.
 
-The prize giving will be at church after the Holy Liturgy for all children who attended the camp.
-
-* For children sleeping over the child must be 5 years or older and the price is $65 per child.
-* For children visiting the camp the price is $30 per visit per child.
-* Children under 5 years old must be accompanied by an adult at all times.
-
-Parent consent forms will be sent with your children, please sign the forms and
-send the payments to Sunday School servants no later than Sunday 4th December.
-
-Please pray for the camp.
+Also a reminder that consent forms and payments need to be returned to the servants by Sunday 4th December.
 
 God bless,
 Sunday School Servants
