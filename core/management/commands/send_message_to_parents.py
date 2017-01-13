@@ -17,12 +17,10 @@ class Command(BaseCommand):
         parser.add_argument('--children-ids',
             action='store',
             dest='children_ids',
-            default=False,
             help='Send email only to parents who have children with these ids (comma separated list of ids).')
         parser.add_argument('--birthday-month',
             action='store',
             dest='birthday_month',
-            default=datetime.now().month,
             help='Send email only to parents who have children with a birthday on that month.')
 
     def handle(self, *args, **options):
@@ -31,26 +29,30 @@ class Command(BaseCommand):
         one_per_parents = settings.MESSAGE_ONE_PER_PARENTS
         is_sample = settings.MESSAGE_IS_SAMPLE
         sample_count = settings.MESSAGE_SAMPLE_COUNT
+
         is_all = options.get('all')
+        children_ids = options.get('children_ids')
         birthday_month = options.get('birthday_month')
         is_birthday = True if birthday_month else False
-        children_ids = options.get('children_ids')
 
         connection = mail.get_connection()
         connection.open()
 
+        children = []
         if is_all:
             children = Child.objects.filter(is_active=True)
         elif birthday_month:
             children = Child.objects.filter(dob__month=int(birthday_month), is_active=True)
         elif children_ids:
-            children = []
             for child_id in children_ids.split(','):
                 try:
                     child = Child.objects.get(pk=int(child_id))
                     children.append(child)
                 except Child.DoesNotExist:
                     raise CommandError('Child "%s" does not exist' % child_id)
+
+        if not children:
+            self.stdout.write('Empty children list. No emails sent.')
 
         parents_ids = []
         count = 0
