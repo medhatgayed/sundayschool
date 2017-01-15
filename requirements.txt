@@ -4,3 +4,4 @@ fabric==1.8.3
 ipdb==0.8.1
 PyPDF2==1.25.1
 reportlab==3.3.0
+gunicorn==19.6.0
