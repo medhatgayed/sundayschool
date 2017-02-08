@@ -3,7 +3,7 @@ Dear {0},
 
 Grace and peace,
 
-This coming Sunday 15th January, Sunday School will celebrate birthdays for children born in January.
+This coming Sunday 12th February, Sunday School will celebrate birthdays for children born in February.
 
 We would love to have {1} with us!
 
