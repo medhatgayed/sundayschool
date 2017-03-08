@@ -78,11 +78,7 @@ Dear parents,
 
 Grace and Peace,
 
-This is a reminder that Sunday School will test the summer memorization on Sunday 21st February.
-
-Sunday School servants have informed your children about the parts that need to be memorized.
-
-Please make sure they are ready for the memorization test.
+This is to let you know that this coming Sunday 26 February, Sunday School will be handing out certificates and prizes for children who participated in the summer festival. Please make sure your child(ren) attend the prize giving this coming Sunday.
 
 God bless,
 Sunday School Servants
