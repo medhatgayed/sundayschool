@@ -40,4 +40,4 @@ class Command(BaseCommand):
                                 str(child_parents.mother_name),
                                 str(child_parents.mother_mobile),
                                 str(child_parents.mother_email),
-                                str(child_parents.address),])
+                                str(child_parents.address.encode('utf8')),])
