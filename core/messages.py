@@ -108,11 +108,9 @@ Dear parents,
 
 Grace and Peace,
 
-Just to let you know that we handed out the primary camp registration forms. If your child has not received a form please ask Sunday School servants.
+Just a reminder that there will be NO LITURGY this coming Sunday 7th May 2017.
 
-The camp will be from Monday 11th to Wednesday 13th January 2016 at Motu Moana Scout Camp, 90 Connaught Street, Blockhouse Bay.
-
-The last day for registering for the primary camp is Sunday 27th December 2015.
+However Sunday School will be held at the normal time at 11:45am.
 
 Please pass the word to other parents.
 
