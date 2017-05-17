@@ -35,19 +35,34 @@ Dear {0},
 
 Grace and peace,
 
-Just a reminder of the Sunday School trip to Extreme Edge Rock Climbing this coming Sunday 30th August.
+St Mark's primary Sunday School will be going on a trip to: Kelly Tarltons 23 Tamaki Drive Orakei
+on Sunday 28th of May 2017.
 
-The bus will leave church at 11:30am and will return to church at 5pm.
+The trip will cost $12.50 per child.
+Children 2 years old and under will enter free.
+All children under 5 years old MUST be accompanied by a parent.
 
-The address is 40c Morrin Road, Panmure.
+There will be a bus taking the kids to Kelly Tarltons:
+* The bus will leave church at 11:30am right after the mass.
+* The bus will leave Kelly Tarltons at 4:30pm. Please be at church at 5pm to pick up your child.
 
-Please remember that your child will need their lunch box and drinking bottle.
+If you don't wish your child to go on the bus:
+* Drop your child off at Kelly Tarltons entrance at 12pm.
+* Pick up your child from Kelly Tarltons exit at 4:30pm.
 
-Also a reminder that you need to fill out the Participant Agreement form at this link:
+If you would like to book a place for your child please REPLY to this email with the following information:
+* The name of your child
+* Your approval / consent to send your child on the trip
+* Emergency contact mobile number
+* Any medical conditions we need to be aware of or medication that your child will need during the trip and instructions
 
-https://app.rockgympro.com/waiver/esign/extremeedgenz/93376cde-7248-497e-83a0-c56dd650ce8c
+Children are expected to bring:
+* Lunch box
+* Drink bottle
 
-Filling the above form is necessary to allow your child to participate in the activities.
+Please send the payment with your child this coming Sunday to pass to Sunday School teachers.
+
+Places are limited so please REPLY ASAP.
 
 God bless,
 Sunday School Servants
