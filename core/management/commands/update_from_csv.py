@@ -1,7 +1,7 @@
 import csv
 
 from django.core.management.base import BaseCommand, CommandError
-from core.models import Child, ChildParents
+from core.models import Child, ChildParents, SundaySchoolClass
 
 
 class Command(BaseCommand):
@@ -31,11 +31,12 @@ class Command(BaseCommand):
             for row in reader:
                 child = None
                 child_parents = None
+                sunday_school_class = SundaySchoolClass.objects.get(name=row['Sunday School Class'])
                 try:
                     child = Child.objects.get(name=row['Child Name'])
                     child.dob = row['Child DOB']
                     child.school_year = row['School Year']
-                    child.sunday_school_class = row['Sunday School Class']
+                    child.sunday_school_class = sunday_school_class
 
                     child_parents = child.child_parents
                     child_parents.phone = row['Home Phone']
@@ -55,7 +56,7 @@ class Command(BaseCommand):
                     child.name = row['Child Name']
                     child.dob = row['Child DOB']
                     child.school_year = row['School Year']
-                    child.sunday_school_class = row['Sunday School Class']
+                    child.sunday_school_class = sunday_school_class
 
                     try:
                         # It is possible that the child is being added to existing parents
