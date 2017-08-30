@@ -30,15 +30,64 @@ class Command(BaseCommand):
             reader = csv.DictReader(csv_file)
             for row in reader:
                 child = None
+                child_parents = None
                 try:
                     child = Child.objects.get(name=row['Child Name'])
                     child.dob = row['Child DOB']
-                    self.stdout.write(("Updating: {} {}".format(child.name, child.dob)))
-                except Child.DoesNotExist:
-                    child = Child(
-                        name=row['Child Name'],
-                        dob=row['Child DOB'])
-                    self.stdout.write(("Creating: {} {}".format(child.name, child.dob)))
+                    child.school_year = row['School Year']
+                    child.sunday_school_class = row['Sunday School Class']
 
-                if child and options.get('save'):
-                    child.save()
+                    child_parents = child.child_parents
+                    child_parents.phone = row['Home Phone']
+                    child_parents.father_name = row['Father Name']
+                    child_parents.father_mobile = row['Father Mobile']
+                    child_parents.father_email = row['Father Email']
+                    child_parents.mother_name = row['Mother Name']
+                    child_parents.mother_mobile = row['Mother Mobile']
+                    child_parents.mother_email = row['Mother Email']
+                    child_parents.address = row['Home Address']
+
+                    self.stdout.write('Updating parents: {}'.format(child_parents.get_parents_names()))
+                    self.stdout.write('Updating child: {} {}'.format(child.name, child.dob))
+                    self.stdout.write('')
+                except Child.DoesNotExist:
+                    child = Child()
+                    child.name = row['Child Name']
+                    child.dob = row['Child DOB']
+                    child.school_year = row['School Year']
+                    child.sunday_school_class = row['Sunday School Class']
+
+                    try:
+                        # It is possible that the child is being added to existing parents
+                        child_parents = ChildParents.objects.get(
+                            phone=row['Home Phone'],
+                            father_name=row['Father Name'],
+                            father_mobile=row['Father Mobile'],
+                            father_email=row['Father Email'],
+                            mother_name=row['Mother Name'],
+                            mother_mobile=row['Mother Mobile'],
+                            mother_email=row['Mother Email'],
+                            address=row['Home Address'])
+                    except ChildParents.DoesNotExist:
+                        child_parents = ChildParents()
+                    finally:
+                        child_parents.phone = row['Home Phone']
+                        child_parents.father_name = row['Father Name']
+                        child_parents.father_mobile = row['Father Mobile']
+                        child_parents.father_email = row['Father Email']
+                        child_parents.mother_name = row['Mother Name']
+                        child_parents.mother_mobile = row['Mother Mobile']
+                        child_parents.mother_email = row['Mother Email']
+                        child_parents.address = row['Home Address']
+                        child.child_parents = child_parents
+
+                        if child_parents.id:
+                            self.stdout.write('Found parents: {}'.format(child_parents.get_parents_names()))
+                        else:
+                            self.stdout.write('Adding parents: {}'.format(child_parents.get_parents_names()))
+
+                    self.stdout.write(("Adding child: {} {}".format(child.name, child.dob)))
+                finally:
+                    if child and child_parents and options.get('save'):
+                        child.save()
+                        child_parents.save()
