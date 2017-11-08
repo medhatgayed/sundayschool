@@ -85,6 +85,9 @@ class Command(BaseCommand):
                                           to_emails,
                                           connection=connection)
 
+                for attachment in settings.MESSAGE_ATTACHMENTS:
+                    email.attach_file(attachment)
+
                 if settings.MESSAGE_SEND_EMAIL:
                     email.send()
                     count += 1

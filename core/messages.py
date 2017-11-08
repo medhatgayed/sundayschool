@@ -70,18 +70,31 @@ St. Mark's Coptic Orthodox Church, Auckland.
 """
 
 CAMP = """
-Dear {0},
+Dear parents,
 
 Grace and Peace,
 
-Just a reminder that we need to know the number of children going to
-Primary Sunday School camp this year to help us organise camp activities.
+St Mark's Sunday School is organising a camp for Primary on 24th, 25th, 26th December 2017.
 
-The camp will be taking place on Friday 16th, Saturday 17th and departing on Sunday 18th December.
+If you would like your child to go to the camp please fill in and return the relevant consent form ASAP
+so that we can have an idea of children numbers as this will help us organise activities and allocate servants.
 
-Please REPLY TO THIS EMAIL to confirm if {1} is going to the camp.
+Please note that children under 5 years old can't sleep over in camp and should fill in the Visiting form.
 
-Also a reminder that consent forms and payments need to be returned to the servants by Sunday 4th December.
+We have sent a consent form with your child and have also attached a copy to this email in case you didn't get one.
+
+If your child is going you can pay online using the following bank account:
+
+Account Name
+COPTIC ORTHODOX CHURCH - N Z PARISH OF ST MARK - AUCKLAND
+
+Account Number
+12-3031-0883559-52
+
+It's very important to put your child's full name in the reference of the payment transaction so that we can identify
+your payment.
+
+Please pray for this camp that the Lord may be with us and bless it.
 
 God bless,
 Sunday School Servants
