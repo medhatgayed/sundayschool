@@ -45,7 +45,7 @@ class Command(BaseCommand):
 
                 try:
                     child = Child.objects.get(name=row['Child Name'])
-                    child.dob = row['Child DOB']
+                    child.parse_and_set_dob(row['Child DOB'])
                     child.school_year = row['School Year']
                     child.sunday_school_class = sunday_school_class
 
@@ -65,7 +65,7 @@ class Command(BaseCommand):
                 except Child.DoesNotExist:
                     child = Child()
                     child.name = row['Child Name']
-                    child.dob = row['Child DOB']
+                    child.parse_and_set_dob(row['Child DOB'])
                     child.school_year = row['School Year']
                     child.sunday_school_class = sunday_school_class
 

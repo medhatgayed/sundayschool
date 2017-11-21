@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime, date
 
 # Create your models here.
 
@@ -98,4 +99,12 @@ class Child(models.Model):
     
     def get_first_name(self):
         return self.name.split()[0].title()
-    
+
+    def parse_and_set_dob(self, dob_str):
+        for dob_format in ('%Y-%m-%d', '%d/%m/%Y'):
+            try:
+                dobdt = datetime.strptime(dob_str, dob_format)
+            except ValueError:
+                pass
+            else:
+                self.dob = date(year=dobdt.year, month=dobdt.month, day=dobdt.day)
