@@ -1,6 +1,7 @@
 import csv
 
 from django.core.management.base import BaseCommand, CommandError
+from django.db.models import Q
 from core.models import Child, ChildParents, SundaySchoolClass
 
 
@@ -71,32 +72,40 @@ class Command(BaseCommand):
 
                     try:
                         # It is possible that the child is being added to existing parents
-                        child_parents = ChildParents.objects.get(
-                            phone=row['Home Phone'],
-                            father_name=row['Father Name'],
-                            father_mobile=row['Father Mobile'],
-                            father_email=row['Father Email'],
-                            mother_name=row['Mother Name'],
-                            mother_mobile=row['Mother Mobile'],
-                            mother_email=row['Mother Email'],
-                            address=row['Home Address'])
+                        query = Q()
+                        if row['Home Phone']:
+                            query |= Q(phone=row['Home Phone'])
+                        if row['Father Mobile']:
+                            query |= Q(father_mobile=row['Father Mobile'])
+                        if row['Father Email']:
+                            query |= Q(father_email=row['Father Email'])
+                        if row['Mother Mobile']:
+                            query |= Q(mother_mobile=row['Mother Mobile'])
+                        if row['Mother Email']:
+                            query |= Q(mother_email=row['Mother Email'])
+                        if row['Home Address']:
+                            query |= Q(address=row['Home Address'])
+
+                        child_parents = ChildParents.objects.get(query)
                     except ChildParents.DoesNotExist:
                         child_parents = ChildParents()
-                    finally:
-                        child_parents.phone = row['Home Phone']
-                        child_parents.father_name = row['Father Name']
-                        child_parents.father_mobile = row['Father Mobile']
-                        child_parents.father_email = row['Father Email']
-                        child_parents.mother_name = row['Mother Name']
-                        child_parents.mother_mobile = row['Mother Mobile']
-                        child_parents.mother_email = row['Mother Email']
-                        child_parents.address = row['Home Address']
-                        child.child_parents = child_parents
+                    except ChildParents.MultipleObjectsReturned:
+                        child_parents = ChildParents()
 
-                        if child_parents.id:
-                            self.stdout.write('Found parents: {}'.format(child_parents.get_parents_names()))
-                        else:
-                            self.stdout.write('Adding parents: {}'.format(child_parents.get_parents_names()))
+                    child_parents.phone = row['Home Phone']
+                    child_parents.father_name = row['Father Name']
+                    child_parents.father_mobile = row['Father Mobile']
+                    child_parents.father_email = row['Father Email']
+                    child_parents.mother_name = row['Mother Name']
+                    child_parents.mother_mobile = row['Mother Mobile']
+                    child_parents.mother_email = row['Mother Email']
+                    child_parents.address = row['Home Address']
+                    child.child_parents = child_parents
+
+                    if child_parents.id:
+                        self.stdout.write('Found parents: {}'.format(child_parents.get_parents_names()))
+                    else:
+                        self.stdout.write('Adding parents: {}'.format(child_parents.get_parents_names()))
 
                     self.stdout.write(("Adding child: {} {}".format(child.name, child.dob)))
                 finally:
