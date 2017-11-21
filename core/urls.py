@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 from core.views import class_list, altar_list, children_in_school_year
 
 
