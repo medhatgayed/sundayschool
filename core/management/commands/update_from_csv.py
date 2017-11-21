@@ -31,6 +31,13 @@ class Command(BaseCommand):
             for row in reader:
                 child = None
                 child_parents = None
+
+                # if row is empty ignore it
+                row_values = [x for x in row.values() if x]
+                if not row_values:
+                    self.stdout.write('Empty row: {}'.format(row))
+                    continue
+
                 sunday_school_class = SundaySchoolClass.objects.get(name=row['Sunday School Class'])
                 try:
                     child = Child.objects.get(name=row['Child Name'])
