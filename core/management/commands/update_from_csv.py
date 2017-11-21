@@ -38,7 +38,11 @@ class Command(BaseCommand):
                     self.stdout.write('Empty row: {}'.format(row))
                     continue
 
-                sunday_school_class = SundaySchoolClass.objects.get(name=row['Sunday School Class'])
+                if row['Sunday School Class'] == '':
+                    sunday_school_class = None
+                else:
+                    sunday_school_class = SundaySchoolClass.objects.get(name=row['Sunday School Class'])
+
                 try:
                     child = Child.objects.get(name=row['Child Name'])
                     child.dob = row['Child DOB']
