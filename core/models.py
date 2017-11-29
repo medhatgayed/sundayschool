@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from datetime import datetime, date
 
@@ -56,6 +57,7 @@ class ChildParents(models.Model):
     mother_email = models.EmailField(blank=True)
     address = models.CharField(max_length=255, blank=True)
     is_active = models.BooleanField(default=True)
+    unique_id = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
     
     def __unicode__(self):
         return self.get_parents_names()
@@ -93,6 +95,7 @@ class Child(models.Model):
     sunday_school_class = models.ForeignKey(SundaySchoolClass, null=True, blank=True)
     sent_emails = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
+    unique_id = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
     
     def __unicode__(self):
         return self.name
