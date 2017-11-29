@@ -3,3 +3,4 @@ local_settings.py
 /static/
 .idea
 env.ini
+sheets.googleapis.com-python.json
