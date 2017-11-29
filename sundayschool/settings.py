@@ -217,6 +217,9 @@ CERT_PA_CHILDREN = {'year_0': [],
 
 CERT_CHILDREN = {'EX': CERT_EX_CHILDREN, 'HA': CERT_HA_CHILDREN, 'AP': CERT_AP_CHILDREN, 'PA': CERT_PA_CHILDREN}
 
+# Google sheets client secret file path
+GOOGLE_SHEETS_CLIENT_SECRET_FILE = ''
+
 # Load local_settings.py
 try:
     from local_settings import *
