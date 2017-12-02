@@ -23,7 +23,7 @@ class Command(BaseCommand):
             '--sheet-key',
             action='store',
             dest='sheet_key',
-            help='The google sheet name.')
+            help='The google sheet key.')
 
     def handle(self, *args, **options):
         sheet_key = options.get('sheet_key')
