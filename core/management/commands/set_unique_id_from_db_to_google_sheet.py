@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 
+import time
 from django.core.management.base import BaseCommand, CommandError
 from core.models import Child
 from django.conf import settings
@@ -43,15 +44,15 @@ class Command(BaseCommand):
                 cell = ws.find(child.child_parents.father_mobile)
 
             father_email = child.child_parents.father_email
-            if father_email:
+            if father_email and not cell:
                 cell = ws.find(child.child_parents.father_email)
 
             mother_mobile = child.child_parents.mother_mobile
-            if mother_mobile:
+            if mother_mobile and not cell:
                 cell = ws.find(child.child_parents.mother_mobile)
 
             mother_email = child.child_parents.mother_email
-            if mother_email:
+            if mother_email and not cell:
                 cell = ws.find(child.child_parents.mother_email)
 
             cell_child_name = cell_child_name[0] if cell_child_name else None
@@ -65,9 +66,10 @@ class Command(BaseCommand):
                 parents_unique_id_cell = 'N{}'.format(cell.row)
                 ws.update_cell(str(parents_unique_id_cell), str(child.child_parents.unique_id))
                 self.stdout.write('Set {} parents unique id to {}'.format(child.name, child.child_parents.unique_id))
+            elif cell:
+                parents_unique_id_cell = 'N{}'.format(cell.row)
+                ws.update_cell(str(parents_unique_id_cell), str(child.child_parents.unique_id))
+                self.stdout.write('Set {} parents unique id to {}'.format(child.name, child.child_parents.unique_id))
+            time.sleep(1)
 
-        if options.get('save'):
-            ws.sync()
-            self.stdout('Updated cloud.')
-        else:
-            self.stdout('Dry run complete.')
+        self.stdout('Updated sheet.')
