@@ -72,4 +72,4 @@ class Command(BaseCommand):
                 self.stdout.write('Set {} parents unique id to {}'.format(child.name, child.child_parents.unique_id))
             time.sleep(1)
 
-        self.stdout('Updated sheet.')
+        self.stdout.write('Updated sheet.')
